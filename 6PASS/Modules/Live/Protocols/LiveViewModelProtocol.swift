@@ -8,10 +8,11 @@
 import Foundation
 protocol LiveViewModelProtocol{
     var delegate: LiveViewModelDelegate? { get set }
+    var fixtureResponse: [FixtureSubResponseModel] { get set }
     
     func viewDidLoad()
     func fetchLiveList()
-    func fetchFixtureList(id: Int)
+    func fetchFixtureList(id: Int, completion: @escaping (([FixtureSubResponseModel]) -> ()))
 }
 
 enum LiveViewModelOutput{

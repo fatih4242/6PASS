@@ -6,8 +6,8 @@
 //
 
 import Foundation
-protocol LiveDataProviderProtocol{
+protocol LiveDataProviderProtocol {
     func liveList(request: LiveRequestModel, completion: @escaping (Result<LiveResponseModel, ApiError>) -> ())
-    func fixtureList(request: FixtureRequestModel, completion: @escaping (Result<FixtureResponseModel, ApiError>) -> ())
+    func fixtureList(request: FixtureRequestModel, completion: @escaping (Result<FixtureBaseResponseModel, ApiError>) -> ())
 }
 

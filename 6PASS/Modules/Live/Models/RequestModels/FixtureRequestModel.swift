@@ -8,8 +8,8 @@
 import Foundation
 struct FixtureRequestModel: RequestModelProtocol{
 
-    var paths: [String] = []
-    var parameters: [String : Any] = [:]
+    var paths: [String]? = []
+    var parameters: [String : Any]? = [:]
     
     private var id: Int
     

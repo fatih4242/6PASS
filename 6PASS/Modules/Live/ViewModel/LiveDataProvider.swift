@@ -14,10 +14,10 @@ final class LiveDataProvider: LiveDataProviderProtocol {
         self.sixPassApi = sixPassApi
     }
     
-    func liveList(request: LiveRequestModel, completion: @escaping (Result<LiveResponseModel, ApiError>) -> ()) {
+    func liveList(request: LiveRequestModel, completion: @escaping (Result<LiveResponseModel, ApiError>) -> ()){
         sixPassApi.liveList(request: request, completion: completion)
     }
-    func fixtureList(request: FixtureRequestModel, completion: @escaping (Result<FixtureResponseModel, ApiError>) -> ()) {
+    func fixtureList(request: FixtureRequestModel, completion: @escaping (Result<FixtureBaseResponseModel, ApiError>) -> ()) {
         sixPassApi.fixtureList(request: request, completion: completion)
 
     }

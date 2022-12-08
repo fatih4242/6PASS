@@ -9,13 +9,14 @@ import Foundation
 extension RequestModelProtocol {
     
     func generateRequest() -> URLRequest? {
+      
         guard let url = generateURL(with: generateQueryItems())
         else { return nil }
         var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
+        request.httpMethod = method?.rawValue
         
         //Girilen Header'lar Foreach ile çoğul hale geliyor
-        headers.forEach { header in
+        headers?.forEach { header in
             request.addValue(header.value, forHTTPHeaderField: header.key)
         }
         return appendBodyIfNeeded(to: request)
@@ -25,10 +26,10 @@ extension RequestModelProtocol {
         var endPoint: String = .empty
         
         //Girilen endpoint'ler Foreach ile çoğul hale geliyor
-        paths.forEach { path in
+        paths?.forEach { path in
             endPoint = endPoint.appending(path)
         }
-        endPoint = self.baseURL.appending(endPoint)
+        endPoint = self.baseURL?.appending(endPoint) ?? .empty
         var urlComponents = URLComponents(string: endPoint)
         urlComponents?.queryItems = queryItems
         guard let url = urlComponents?.url
@@ -38,10 +39,11 @@ extension RequestModelProtocol {
     
     private func generateQueryItems() -> [URLQueryItem]{
         var queryItem: [URLQueryItem] = []
-        parameters.forEach { parameter in
+        parameters?.forEach { parameter in
             let value = String(describing: parameter.value)
             queryItem.append(.init(name: parameter.key, value: value))
         }
+
         return queryItem
     }
     

@@ -6,20 +6,10 @@
 //
 
 import Foundation
-struct LiveRequestModel : RequestModelProtocol{
-    var baseURL: String = ""
-    var paths: [String] = []
-    var parameters: [String : Any] = [:]
-    var headers: [String : String] = [:]
-    var method: RequestMethod = .get
-    var body: [String : Any] = [:]
+struct LiveRequestModel : RequestModelProtocol {
+    var paths: [String]?
     
     init(paths: [String]) {
         self.paths = paths
-        prepareRequest()
-    }
-    
-    mutating func prepareRequest() {
-        self.baseURL = SixPassApiConstant.baseURL.rawValue
     }
 }
