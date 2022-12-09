@@ -68,6 +68,20 @@ extension LiveVC: UITableViewDataSource{
         else { return "" }
         return leagueName
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let selectedFixture = viewModel?.fixtureSection[indexPath.section].fixtureItem[indexPath.row]
+        else { return }
+        let fixtureDetailNibName = String(describing: FixtureDetailVC.self)
+        let fixtureDetailVM = FixtureDetailViewModel()
+        
+        let fixtureDetailVC = FixtureDetailVC(nibName: fixtureDetailNibName, bundle: .main)
+        fixtureDetailVM.fixture = selectedFixture
+        fixtureDetailVC.viewModel = fixtureDetailVM
+        
+        UIApplication.topViewController()?.navigationController?.pushViewController(fixtureDetailVC, animated: true)
+    }
 }
 
 extension LiveVC: UITableViewDelegate {

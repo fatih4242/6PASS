@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE3C76F12943581000BAE935 /* FixtureDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C76EF2943581000BAE935 /* FixtureDetailVC.swift */; };
+		EE3C76F22943581000BAE935 /* FixtureDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3C76F02943581000BAE935 /* FixtureDetailVC.xib */; };
+		EE3C76F529435A5300BAE935 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C76F429435A5300BAE935 /* UIApplication+Extension.swift */; };
+		EE3C76F8294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C76F7294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift */; };
+		EE3C76FB2943767700BAE935 /* FixtureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C76FA2943767700BAE935 /* FixtureDetailViewModel.swift */; };
+		EE3C76FD294379D200BAE935 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C76FC294379D200BAE935 /* UIImageView+Extension.swift */; };
 		EEAA576C293FBBC7005B0393 /* FixtureRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA576B293FBBC7005B0393 /* FixtureRequestModel.swift */; };
 		EEAA576E293FC05E005B0393 /* FixtureBaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA576D293FC05E005B0393 /* FixtureBaseResponseModel.swift */; };
 		EEB8F267294253740044DF71 /* FixtureSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8F266294253740044DF71 /* FixtureSectionModel.swift */; };
@@ -50,6 +56,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE3C76EF2943581000BAE935 /* FixtureDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureDetailVC.swift; sourceTree = "<group>"; };
+		EE3C76F02943581000BAE935 /* FixtureDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FixtureDetailVC.xib; sourceTree = "<group>"; };
+		EE3C76F429435A5300BAE935 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		EE3C76F7294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureDetailViewModelProtocol.swift; sourceTree = "<group>"; };
+		EE3C76FA2943767700BAE935 /* FixtureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureDetailViewModel.swift; sourceTree = "<group>"; };
+		EE3C76FC294379D200BAE935 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		EEAA576B293FBBC7005B0393 /* FixtureRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRequestModel.swift; sourceTree = "<group>"; };
 		EEAA576D293FC05E005B0393 /* FixtureBaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureBaseResponseModel.swift; sourceTree = "<group>"; };
 		EEB8F266294253740044DF71 /* FixtureSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureSectionModel.swift; sourceTree = "<group>"; };
@@ -105,6 +117,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE3C76EA2943577F00BAE935 /* FixtureDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EE3C76F62943753D00BAE935 /* ViewModel */,
+				EE3C76F32943581500BAE935 /* View */,
+				EE3C76F92943765D00BAE935 /* Protocols */,
+			);
+			path = FixtureDetail;
+			sourceTree = "<group>";
+		};
+		EE3C76F32943581500BAE935 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE3C76EF2943581000BAE935 /* FixtureDetailVC.swift */,
+				EE3C76F02943581000BAE935 /* FixtureDetailVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE3C76F62943753D00BAE935 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE3C76FA2943767700BAE935 /* FixtureDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE3C76F92943765D00BAE935 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EE3C76F7294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EEB8F26E294258010044DF71 /* Fixture */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +328,8 @@
 				EECED9F1293E67CF009C7BC9 /* RequestModel */,
 				EECED9F2293E67DD009C7BC9 /* String */,
 				EEB8F29229426B6B0044DF71 /* UIImage+Extension.swift */,
+				EE3C76F429435A5300BAE935 /* UIApplication+Extension.swift */,
+				EE3C76FC294379D200BAE935 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,6 +382,7 @@
 		EECEDA01293E6EC0009C7BC9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EE3C76EA2943577F00BAE935 /* FixtureDetail */,
 				EECEDA00293E6EB8009C7BC9 /* Live */,
 				EEB8F29129426A0D0044DF71 /* MainTabBar */,
 			);
@@ -466,6 +516,7 @@
 				EECED9FE293E6E6B009C7BC9 /* LiveVC.xib in Resources */,
 				EEB8F28129425C2E0044DF71 /* Roboto-Italic.ttf in Resources */,
 				EEB8F28529425C2E0044DF71 /* Roboto-Black.ttf in Resources */,
+				EE3C76F22943581000BAE935 /* FixtureDetailVC.xib in Resources */,
 				EEB8F28029425C2E0044DF71 /* Roboto-Light.ttf in Resources */,
 				EEB8F29029426A020044DF71 /* MainTabBarController.xib in Resources */,
 			);
@@ -479,8 +530,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECED9F8293E6941009C7BC9 /* NetworkManager.swift in Sources */,
+				EE3C76F8294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift in Sources */,
+				EE3C76FD294379D200BAE935 /* UIImageView+Extension.swift in Sources */,
 				EEB8F267294253740044DF71 /* FixtureSectionModel.swift in Sources */,
 				EEB8F28F29426A020044DF71 /* MainTabBarController.swift in Sources */,
+				EE3C76F12943581000BAE935 /* FixtureDetailVC.swift in Sources */,
 				EECEDA17293FB0C1009C7BC9 /* LiveDataProvider.swift in Sources */,
 				EECED9E6293E5F01009C7BC9 /* RequestMethod.swift in Sources */,
 				EEB8F28B294263690044DF71 /* FixtureCell.swift in Sources */,
@@ -492,6 +546,7 @@
 				EECED9CB293E5C01009C7BC9 /* AppDelegate.swift in Sources */,
 				EECED9E3293E5E03009C7BC9 /* 6PassApiConstant.swift in Sources */,
 				EECEDA12293FAEAF009C7BC9 /* LiveViewModelProtocol.swift in Sources */,
+				EE3C76FB2943767700BAE935 /* FixtureDetailViewModel.swift in Sources */,
 				EECEDA09293E75C0009C7BC9 /* LiveResponseModel.swift in Sources */,
 				EECEDA14293FAFA9009C7BC9 /* LiveViewModel.swift in Sources */,
 				EECED9FD293E6E6B009C7BC9 /* LiveVC.swift in Sources */,
@@ -500,6 +555,7 @@
 				EECEDA10293FAE17009C7BC9 /* LiveDataProviderProtocol.swift in Sources */,
 				EECED9EE293E6163009C7BC9 /* RequestModel+Extension.swift in Sources */,
 				EEAA576C293FBBC7005B0393 /* FixtureRequestModel.swift in Sources */,
+				EE3C76F529435A5300BAE935 /* UIApplication+Extension.swift in Sources */,
 				EEAA576E293FC05E005B0393 /* FixtureBaseResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
