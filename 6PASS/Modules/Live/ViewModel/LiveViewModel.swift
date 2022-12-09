@@ -7,14 +7,12 @@
 
 import Foundation
 final class LiveViewModel: LiveViewModelProtocol{
-
-    var delegate: LiveViewModelDelegate?
+    
+    var fixtureSection: [FixtureSectionModel] = []
     private let dataProvider : LiveDataProviderProtocol?
-    var fixtureResponse: [FixtureSubResponseModel] = []
-    
-    var leagueResponse: [ResponseModel] = []
-    
-
+    private var fixtureResponseCollect: [FixtureSubResponseModel] = []
+    let group = DispatchGroup()
+    var delegate: LiveViewModelDelegate?
     
     init(dataProvider: LiveDataProviderProtocol) {
         self.dataProvider = dataProvider
@@ -30,11 +28,24 @@ final class LiveViewModel: LiveViewModelProtocol{
                 case .success(let response):
                 guard let response = response.response
                 else { return }
-
+                
                 response.forEach { item in
-                    self.fetchFixtureList(id: item.fixture?.id ?? 0) { response in
-                        print(response)//
+                    self.group.enter()
+                    self.fetchFixtureList(id: item.fixture?.id ?? 0) { fixtureResponse in
+                        
+                        self.fixtureResponseCollect.append(contentsOf: fixtureResponse)
+                        self.group.leave()
                     }
+                }
+                self.group.notify(queue: .main) {
+                    self.fixtureResponseCollect = self.fixtureResponseCollect.sorted(by: { $0.league?.id ?? 0 > $1.league?.id ?? 0 })
+                    let fixtureDictionary = Dictionary(grouping: self.fixtureResponseCollect, by: { $0.league?.name ?? "" })
+                    fixtureDictionary.forEach { item in
+                        let fixtureSectionModel = FixtureSectionModel(leagueName: item.key, fixtureItem: item.value)
+                        self.fixtureSection.append(fixtureSectionModel)
+                    }
+                    self.notify(.fetchedLive)
+                    
                 }
                 case .failure(let error):
                     print("err: \(error.description)")

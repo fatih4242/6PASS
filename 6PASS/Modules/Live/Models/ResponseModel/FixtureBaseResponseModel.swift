@@ -14,6 +14,7 @@ struct FixtureSubResponseModel: Codable{
     let fixture: FixtureDetailResponseModel?
     let league: FixtureLeagueResponseModel?
     let teams: FixtureTeamsResponseModel?
+    let goals: FixtureGoalsResponseModel?
 }
 
 //MARK: Fixture
@@ -22,7 +23,6 @@ struct FixtureDetailResponseModel: Codable{
     let referee: String?
     let venue: FixtureVenueResponseModel?
     let status: FixtureStatusResponseModel?
-    let goals: FixtureGoalsResponseModel?
 }
 struct FixtureVenueResponseModel: Codable{
     let id: Int?

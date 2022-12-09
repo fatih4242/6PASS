@@ -8,7 +8,7 @@
 import Foundation
 protocol LiveViewModelProtocol{
     var delegate: LiveViewModelDelegate? { get set }
-    var fixtureResponse: [FixtureSubResponseModel] { get set }
+    var fixtureSection: [FixtureSectionModel] { get set }
     
     func viewDidLoad()
     func fetchLiveList()

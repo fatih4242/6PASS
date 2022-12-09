@@ -18,13 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let networking = NetworkManager(session: .shared)
-        let sixPassApi = SixPassApi(networkManager: networking)
-        let liveDataProivder = LiveDataProvider(sixPassApi: sixPassApi)
-        let liveViewModel = LiveViewModel(dataProvider: liveDataProivder)
-        let liveVC = LiveVC(nibName: String(describing: LiveVC.self), bundle: .main)
-        liveVC.viewModel = liveViewModel
-        let navigationViewController = UINavigationController(rootViewController: liveVC)
+        let tabBarController = MainTabBarController(nibName: String(describing: MainTabBarController.self), bundle: .main)
+        let navigationViewController = UINavigationController(rootViewController: tabBarController)
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
         window?.rootViewController = navigationViewController
         window?.makeKeyAndVisible()
         
