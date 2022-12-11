@@ -13,6 +13,8 @@
 		EE3C76F8294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C76F7294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift */; };
 		EE3C76FB2943767700BAE935 /* FixtureDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C76FA2943767700BAE935 /* FixtureDetailViewModel.swift */; };
 		EE3C76FD294379D200BAE935 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3C76FC294379D200BAE935 /* UIImageView+Extension.swift */; };
+		EE51EFEE294492D400626B31 /* DetailGeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51EFEC294492D400626B31 /* DetailGeneralCell.swift */; };
+		EE51EFEF294492D400626B31 /* DetailGeneralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE51EFED294492D400626B31 /* DetailGeneralCell.xib */; };
 		EEAA576C293FBBC7005B0393 /* FixtureRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA576B293FBBC7005B0393 /* FixtureRequestModel.swift */; };
 		EEAA576E293FC05E005B0393 /* FixtureBaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA576D293FC05E005B0393 /* FixtureBaseResponseModel.swift */; };
 		EEB8F267294253740044DF71 /* FixtureSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8F266294253740044DF71 /* FixtureSectionModel.swift */; };
@@ -62,6 +64,8 @@
 		EE3C76F7294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		EE3C76FA2943767700BAE935 /* FixtureDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureDetailViewModel.swift; sourceTree = "<group>"; };
 		EE3C76FC294379D200BAE935 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		EE51EFEC294492D400626B31 /* DetailGeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGeneralCell.swift; sourceTree = "<group>"; };
+		EE51EFED294492D400626B31 /* DetailGeneralCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailGeneralCell.xib; sourceTree = "<group>"; };
 		EEAA576B293FBBC7005B0393 /* FixtureRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRequestModel.swift; sourceTree = "<group>"; };
 		EEAA576D293FC05E005B0393 /* FixtureBaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureBaseResponseModel.swift; sourceTree = "<group>"; };
 		EEB8F266294253740044DF71 /* FixtureSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureSectionModel.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		EE3C76EA2943577F00BAE935 /* FixtureDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EE51EFEB294492AD00626B31 /* Cells */,
 				EE3C76F62943753D00BAE935 /* ViewModel */,
 				EE3C76F32943581500BAE935 /* View */,
 				EE3C76F92943765D00BAE935 /* Protocols */,
@@ -150,6 +155,15 @@
 				EE3C76F7294375AE00BAE935 /* FixtureDetailViewModelProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EE51EFEB294492AD00626B31 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EE51EFEC294492D400626B31 /* DetailGeneralCell.swift */,
+				EE51EFED294492D400626B31 /* DetailGeneralCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		EEB8F26E294258010044DF71 /* Fixture */ = {
@@ -507,6 +521,7 @@
 				EEB8F27F29425C2E0044DF71 /* Roboto-Thin.ttf in Resources */,
 				EEB8F28229425C2E0044DF71 /* Roboto-Regular.ttf in Resources */,
 				EECED9D7293E5C02009C7BC9 /* LaunchScreen.storyboard in Resources */,
+				EE51EFEF294492D400626B31 /* DetailGeneralCell.xib in Resources */,
 				EEB8F28429425C2E0044DF71 /* Roboto-BoldItalic.ttf in Resources */,
 				EEB8F28C294263690044DF71 /* FixtureCell.xib in Resources */,
 				EEB8F27D29425C2E0044DF71 /* Roboto-BlackItalic.ttf in Resources */,
@@ -546,6 +561,7 @@
 				EECED9CB293E5C01009C7BC9 /* AppDelegate.swift in Sources */,
 				EECED9E3293E5E03009C7BC9 /* 6PassApiConstant.swift in Sources */,
 				EECEDA12293FAEAF009C7BC9 /* LiveViewModelProtocol.swift in Sources */,
+				EE51EFEE294492D400626B31 /* DetailGeneralCell.swift in Sources */,
 				EE3C76FB2943767700BAE935 /* FixtureDetailViewModel.swift in Sources */,
 				EECEDA09293E75C0009C7BC9 /* LiveResponseModel.swift in Sources */,
 				EECEDA14293FAFA9009C7BC9 /* LiveViewModel.swift in Sources */,
