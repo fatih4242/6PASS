@@ -73,6 +73,7 @@ extension LiveVC: UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
         guard let selectedFixture = viewModel?.fixtureSection[indexPath.section].fixtureItem[indexPath.row]
         else { return }
+        
         let fixtureDetailNibName = String(describing: FixtureDetailVC.self)
         let fixtureDetailVM = FixtureDetailViewModel()
         
@@ -86,6 +87,6 @@ extension LiveVC: UITableViewDataSource{
 
 extension LiveVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
+        return 25
     }
 }

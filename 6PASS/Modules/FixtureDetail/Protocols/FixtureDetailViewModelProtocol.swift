@@ -10,6 +10,7 @@ import Foundation
 protocol FixtureDetailViewModelProtocol {
     var fixture: FixtureSubResponseModel? { get set }
     var delegate: FixtureDetailDelegate? { get set }
+    var tableItems: [FixtureDetailCellType] { get set }
     
     func viewDidLoad()
 }

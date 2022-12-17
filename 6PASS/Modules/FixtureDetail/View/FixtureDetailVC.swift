@@ -9,51 +9,60 @@ import UIKit
 
 class FixtureDetailVC: UIViewController {
     
-    //@IBOutlet weak var fixtureLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     var viewModel: FixtureDetailViewModelProtocol? {
         didSet {
             viewModel?.delegate = self
         }
     }
-    
-    @IBOutlet weak var awayTeamNameLabel: UILabel!
-    @IBOutlet weak var homeTeamNameLabel: UILabel!
-    @IBOutlet weak var awayLogoImage: UIImageView!
-    @IBOutlet weak var homeLogoImage: UIImageView!
-    @IBOutlet weak var scoreLabel: UILabel!
-    
-    var homeImg : UIImage!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fixtureLabel.text = fixture?.teams?.home?.name ?? ""
-        
+        tableView.dataSource = self
+        tableView.delegate = self
+        registerCells()
         viewModel?.viewDidLoad()
     }
-
-    private func setupUI() {
-        guard let homeLogo = viewModel?.fixture?.teams?.home?.logo,
-              let awayLogo = viewModel?.fixture?.teams?.away?.logo,
-              let homeName = viewModel?.fixture?.teams?.home?.name,
-              let awayName = viewModel?.fixture?.teams?.away?.name,
-              let homeGoals = viewModel?.fixture?.goals?.home,
-              let awayGoals = viewModel?.fixture?.goals?.away
-        else { return }
-
-        
-        awayLogoImage.download(from: awayLogo)
-        homeLogoImage.download(from: homeLogo)
-        
-        homeTeamNameLabel.text = homeName
-        awayTeamNameLabel.text = awayName
-        scoreLabel.text = "\(homeGoals) - \(awayGoals)"
+    
+    private func registerCells() {
+        let scoreCellName = String(describing: ScoreCell.self)
+        let scoreCellNib = UINib(nibName: scoreCellName, bundle: .main)
+        tableView.register(scoreCellNib, forCellReuseIdentifier: scoreCellName)
     }
 }
+
 extension FixtureDetailVC: FixtureDetailDelegate {
     func handle(_ output: FixtureDetailViewModelOutput) {
         switch output {
         case .fetchedFixture:
-            setupUI()
+            self.tableView.reloadData()
         }
     }
 }
+
+extension FixtureDetailVC: UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let itemCount = viewModel?.tableItems.count
+        else { return 0 }
+        return itemCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let item = viewModel?.tableItems[indexPath.row],
+              let fixture = viewModel?.fixture
+        else { return UITableViewCell() }
+        
+        switch item {
+        case .score:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ScoreCell.self)) as? ScoreCell{
+                cell.config(with: fixture)
+                return cell
+            }
+        case .tabView:
+            return UITableViewCell()
+        }
+        return UITableViewCell()
+    }
+}
+
+

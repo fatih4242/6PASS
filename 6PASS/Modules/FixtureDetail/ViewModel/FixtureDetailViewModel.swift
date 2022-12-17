@@ -8,10 +8,12 @@
 import Foundation
 
 final class FixtureDetailViewModel: FixtureDetailViewModelProtocol {
+    var tableItems: [FixtureDetailCellType] = []
     var fixture: FixtureSubResponseModel?
     var delegate: FixtureDetailDelegate?
     
     func viewDidLoad() {
+        tableItems.append(.score)
         notify(output: .fetchedFixture)
     }
     
