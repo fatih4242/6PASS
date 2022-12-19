@@ -14,8 +14,8 @@
             filePath = "6PASS/Modules/FixtureDetail/View/FixtureDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "handle(_:)"
             landmarkType = "7">
          </BreakpointContent>

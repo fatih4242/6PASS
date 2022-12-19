@@ -48,7 +48,7 @@ final class LiveViewModel: LiveViewModelProtocol{
                     
                 }
                 case .failure(let error):
-                    print("err: \(error.description)")
+                print("err: \(error)")
             }
         })
     }

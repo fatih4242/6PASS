@@ -14,6 +14,7 @@ final class FixtureDetailViewModel: FixtureDetailViewModelProtocol {
     
     func viewDidLoad() {
         tableItems.append(.score)
+        tableItems.append(.tabView)
         notify(output: .fetchedFixture)
     }
     

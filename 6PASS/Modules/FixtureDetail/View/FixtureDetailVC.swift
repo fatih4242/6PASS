@@ -28,6 +28,10 @@ class FixtureDetailVC: UIViewController {
         let scoreCellName = String(describing: ScoreCell.self)
         let scoreCellNib = UINib(nibName: scoreCellName, bundle: .main)
         tableView.register(scoreCellNib, forCellReuseIdentifier: scoreCellName)
+        
+        let tabCellName = String(describing: TabViewCell.self)
+        let tabCellNib = UINib(nibName: tabCellName, bundle: .main)
+        tableView.register(tabCellNib, forCellReuseIdentifier: tabCellName)
     }
 }
 
@@ -59,7 +63,10 @@ extension FixtureDetailVC: UITableViewDataSource, UITableViewDelegate{
                 return cell
             }
         case .tabView:
-            return UITableViewCell()
+            if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TabViewCell.self)) as? TabViewCell {
+                cell.fixtureSubResponse = viewModel?.fixture
+                return cell
+            }
         }
         return UITableViewCell()
     }

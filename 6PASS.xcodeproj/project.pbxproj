@@ -53,6 +53,11 @@
 		EECEDA12293FAEAF009C7BC9 /* LiveViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEDA11293FAEAF009C7BC9 /* LiveViewModelProtocol.swift */; };
 		EECEDA14293FAFA9009C7BC9 /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEDA13293FAFA9009C7BC9 /* LiveViewModel.swift */; };
 		EECEDA17293FB0C1009C7BC9 /* LiveDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEDA16293FB0C1009C7BC9 /* LiveDataProvider.swift */; };
+		EEE94CCE2950E1990089CD0B /* GeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE94CCC2950E1990089CD0B /* GeneralCell.swift */; };
+		EEE94CCF2950E1990089CD0B /* GeneralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE94CCD2950E1990089CD0B /* GeneralCell.xib */; };
+		EEE94CD32950E28B0089CD0B /* GeneralItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE94CD12950E28B0089CD0B /* GeneralItemCell.swift */; };
+		EEE94CD42950E28B0089CD0B /* GeneralItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE94CD22950E28B0089CD0B /* GeneralItemCell.xib */; };
+		EEE94CD72950EF450089CD0B /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE94CD62950EF450089CD0B /* EventType.swift */; };
 		EEF2EB9D294A480400B99822 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EB9B294A480400B99822 /* ScoreCell.swift */; };
 		EEF2EB9E294A480400B99822 /* ScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF2EB9C294A480400B99822 /* ScoreCell.xib */; };
 		EEF2EBA0294A4CCE00B99822 /* FixtureDetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EB9F294A4CCE00B99822 /* FixtureDetailCellType.swift */; };
@@ -109,6 +114,11 @@
 		EECEDA11293FAEAF009C7BC9 /* LiveViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModelProtocol.swift; sourceTree = "<group>"; };
 		EECEDA13293FAFA9009C7BC9 /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
 		EECEDA16293FB0C1009C7BC9 /* LiveDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDataProvider.swift; sourceTree = "<group>"; };
+		EEE94CCC2950E1990089CD0B /* GeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCell.swift; sourceTree = "<group>"; };
+		EEE94CCD2950E1990089CD0B /* GeneralCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralCell.xib; sourceTree = "<group>"; };
+		EEE94CD12950E28B0089CD0B /* GeneralItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemCell.swift; sourceTree = "<group>"; };
+		EEE94CD22950E28B0089CD0B /* GeneralItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralItemCell.xib; sourceTree = "<group>"; };
+		EEE94CD62950EF450089CD0B /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
 		EEF2EB9B294A480400B99822 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		EEF2EB9C294A480400B99822 /* ScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCell.xib; sourceTree = "<group>"; };
 		EEF2EB9F294A4CCE00B99822 /* FixtureDetailCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureDetailCellType.swift; sourceTree = "<group>"; };
@@ -434,6 +444,7 @@
 			children = (
 				EECEDA08293E75C0009C7BC9 /* LiveResponseModel.swift */,
 				EEAA576D293FC05E005B0393 /* FixtureBaseResponseModel.swift */,
+				EEE94CD62950EF450089CD0B /* EventType.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -464,6 +475,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EEE94CD02950E19E0089CD0B /* General */ = {
+			isa = PBXGroup;
+			children = (
+				EEE94CCC2950E1990089CD0B /* GeneralCell.swift */,
+				EEE94CCD2950E1990089CD0B /* GeneralCell.xib */,
+				EEE94CD52950E2910089CD0B /* GeneralItem */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		EEE94CD52950E2910089CD0B /* GeneralItem */ = {
+			isa = PBXGroup;
+			children = (
+				EEE94CD12950E28B0089CD0B /* GeneralItemCell.swift */,
+				EEE94CD22950E28B0089CD0B /* GeneralItemCell.xib */,
+			);
+			path = GeneralItem;
+			sourceTree = "<group>";
+		};
 		EEF2EBA1294A4FC600B99822 /* Score */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +508,7 @@
 			children = (
 				EEF2EBA3294A4FEA00B99822 /* TabViewCell.swift */,
 				EEF2EBA4294A4FEA00B99822 /* TabViewCell.xib */,
+				EEE94CD02950E19E0089CD0B /* General */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -549,6 +580,7 @@
 				EECED9D7293E5C02009C7BC9 /* LaunchScreen.storyboard in Resources */,
 				EEB8F28429425C2E0044DF71 /* Roboto-BoldItalic.ttf in Resources */,
 				EEB8F28C294263690044DF71 /* FixtureCell.xib in Resources */,
+				EEE94CCF2950E1990089CD0B /* GeneralCell.xib in Resources */,
 				EEB8F27D29425C2E0044DF71 /* Roboto-BlackItalic.ttf in Resources */,
 				EEB8F27E29425C2E0044DF71 /* Roboto-LightItalic.ttf in Resources */,
 				EECED9D4293E5C02009C7BC9 /* Assets.xcassets in Resources */,
@@ -556,6 +588,7 @@
 				EECED9FE293E6E6B009C7BC9 /* LiveVC.xib in Resources */,
 				EEB8F28129425C2E0044DF71 /* Roboto-Italic.ttf in Resources */,
 				EEB8F28529425C2E0044DF71 /* Roboto-Black.ttf in Resources */,
+				EEE94CD42950E28B0089CD0B /* GeneralItemCell.xib in Resources */,
 				EE3C76F22943581000BAE935 /* FixtureDetailVC.xib in Resources */,
 				EEB8F28029425C2E0044DF71 /* Roboto-Light.ttf in Resources */,
 				EEB8F29029426A020044DF71 /* MainTabBarController.xib in Resources */,
@@ -580,6 +613,7 @@
 				EECEDA17293FB0C1009C7BC9 /* LiveDataProvider.swift in Sources */,
 				EEF2EB9D294A480400B99822 /* ScoreCell.swift in Sources */,
 				EECED9E6293E5F01009C7BC9 /* RequestMethod.swift in Sources */,
+				EEE94CCE2950E1990089CD0B /* GeneralCell.swift in Sources */,
 				EEB8F28B294263690044DF71 /* FixtureCell.swift in Sources */,
 				EECED9F0293E6228009C7BC9 /* String+Extension.swift in Sources */,
 				EECEDA05293E6F96009C7BC9 /* LiveRequestModel.swift in Sources */,
@@ -596,6 +630,8 @@
 				EECED9FD293E6E6B009C7BC9 /* LiveVC.swift in Sources */,
 				EECED9F5293E6813009C7BC9 /* ApiError.swift in Sources */,
 				EECED9CD293E5C01009C7BC9 /* SceneDelegate.swift in Sources */,
+				EEE94CD32950E28B0089CD0B /* GeneralItemCell.swift in Sources */,
+				EEE94CD72950EF450089CD0B /* EventType.swift in Sources */,
 				EECEDA10293FAE17009C7BC9 /* LiveDataProviderProtocol.swift in Sources */,
 				EECED9EE293E6163009C7BC9 /* RequestModel+Extension.swift in Sources */,
 				EEAA576C293FBBC7005B0393 /* FixtureRequestModel.swift in Sources */,
